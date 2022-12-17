@@ -1,0 +1,289 @@
+:root {
+    --default-blue: #075985;
+    --default-gray: #e6e7eb;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: default;
+}
+
+html {
+    font-size: 16px;
+    width: 100vw;
+    min-width: 1100px;
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    width: 100%;
+    max-width: 3000px;
+}
+/* General list styilng */
+
+ul, li {
+    list-style: none;
+}
+
+.sidebar-list, .action-button{
+    font-weight: 900;
+    font-size: calc(1rem + calc(0.10vw + 0.10vh));
+    color: var(--default-gray);
+}
+
+
+ /* Layout  */
+
+.container {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(300px, 12%) minmax(550px, 1fr);
+    grid-template-rows: max-content 1fr;
+    row-gap: 20px;
+}
+
+#top-bar {
+    grid-row: 1 / 2;
+}
+
+.main-screen {
+    grid-row: 2 / 3
+}
+
+
+.sidebar {
+    grid-row: 1 / -1;
+    background-color: var(--default-blue);
+    color: var(--default-gray);
+    padding: 20px;
+}
+
+/* Sidebar Styling */
+
+.sidebar-logo, .sidebar-item {
+    display: block;
+    height: 50px;
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+    place-items: center;
+}
+
+.sidebar-item p, .sidebar-logo h2 {
+    justify-self: start;
+    padding-left: 35px;
+}
+
+.sidebar-logo h2 {
+    font-size: 1.75rem;
+}
+
+.sidebar-logo, .sidebar-list {
+    margin-bottom: calc(10px + 4vh);
+}
+
+.sidebar-logo svg {
+    width: 50px;
+    height: 50px;
+    min-width: 40px;
+}
+
+/* top bar styling */
+.profile-pic {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.small-pic {
+    width: 60px;
+    height: 60px;
+}
+
+.top-bar-lower {
+    height: 100px;
+}
+
+.top-bar-upper {
+    height: 80px;
+}
+
+.top-bar-upper, .top-bar-lower {
+    padding: 15px calc(3rem + 5vw) 0 calc(3rem + 2vw);
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(300px, 70%) minmax(350px, 30%);
+    background-color: white;
+}
+
+.searchbar-wrapper {
+    width: 100%;
+    min-width: 300px;
+    display: flex;
+    align-items: center;
+    padding-right: 50px;
+}
+
+label {
+    display: flex;
+    align-items: center;
+}
+
+input {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 15px;
+    border: none;
+    background-color: #e6e7eb;
+    font-size: 1.3rem;
+    font-weight: 100;
+    padding: 3px 10px 3px 10px;
+}
+
+input:focus {
+    outline: none;
+}
+
+.rest-of-upper, .action-buttons-list {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.rest-of-upper svg {
+    margin-right: 50px;
+}
+
+.user-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.action-buttons-list {
+    justify-content: space-between;
+}
+
+.action-button {
+    padding: 10px;
+    width: 100px;
+    font-weight: bold;
+    background-color: var(--default-blue);
+    border: none;
+    border-radius: 20px;
+}
+
+/* Projects and feed section */
+
+.main-screen {
+    background-color: var(--default-gray);
+    padding: calc(10px + 3vh) 3vw 3vh 3vw;
+    display: grid;
+    grid-template-columns: minmax(350px, 4fr) minmax(250px, 350px);
+    grid-gap: 25px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-rows: 1vw;
+    grid-auto-rows: minmax(250px, max-content);
+    grid-gap: 25px;
+}
+
+.grid-title {
+    grid-column: 1 / -1;
+}
+
+.project-card,
+.announcements-card,
+.trending-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    color: #525252;
+    display: grid;
+    grid-auto-flow:row;
+    gap: 10px;
+    place-content: start;
+}
+
+.project-card {
+    border-left: 10px solid orange;
+    grid-template-rows: 2fr 8fr 2fr;
+}
+
+.project-icons {
+    place-self: end;
+    width: 140px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.project-icons,
+.project-title,
+.announcement-subject,
+.at-who {
+    color: black;
+}
+
+/* Announcements Space */
+
+.right-column {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-rows: 1vw minmax(300px, max-content) 1vw minmax(300px, max-content);
+    grid-gap: 25px;
+}
+
+
+.announcements-card {
+    grid-template-rows: repeat(3, fit-content);
+}
+
+.announcement-text, .announcement {
+    
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4; /* number of lines to show */
+                line-clamp: 3; 
+        -webkit-box-orient: vertical;
+     
+}
+
+
+
+
+.last {
+    border: none;
+}
+
+.trending-card {
+    grid-template-rows: repeat(auto-fit, fit-content);
+    gap: 25px;
+}
+
+.trending {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.trending-title,
+.announcement-title,
+.grid-title {
+    align-self: end;
+}
+
+
+
+
+
+
+
